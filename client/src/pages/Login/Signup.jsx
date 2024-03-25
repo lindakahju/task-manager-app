@@ -11,26 +11,6 @@ function Signup() {
     password: '',
   })
 
-  // const registerUser = async (e) => {
-  //   e.preventDefault()
-  //   const {username, password} = data
-  //   try {
-  //     const {data} = await axios.post('/signup', {
-  //       username, password
-  //     })
-  //     if(data.error) {
-  //       console.log(data.error);
-  //     } else {
-  //       setData({})
-  //       navigate('/login')
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
-
-
-
   const signupUser = async (e) => {
     e.preventDefault()
     const {username, password} = data

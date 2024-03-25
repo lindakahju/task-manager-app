@@ -12,7 +12,7 @@ function Nav({ search, setSearch, view, setView }) {
   const navigate = useNavigate(); 
 
   const today = new Date();
-  const formattedDate = today.toISOString().split('T')[0]; // Delar upp datum och tid och behåller bara datumdelen
+  const formattedDate = today.toISOString().split('T')[0];
   
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 

@@ -14,12 +14,12 @@ const TaskCard = ({ task, list, due, handleEdit, handleComplete, isCompleted }) 
       <section className="task-card__first-row">
         {task}
         <section className="task-card__first-row buttons">
-          {!isCompleted && ( // Render edit button only if the task is not completed
+          {!isCompleted && ( 
             <button className="btn-edit" onClick={handleEdit}>
               <img src={editIcon} alt="edit icon" />
             </button>
           )}
-          {!isCompleted && ( // Render complete button only if the task is not completed
+          {!isCompleted && (
             <button
               className="btn-done"
               onClick={() => handleComplete({ task, list, due })}

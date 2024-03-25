@@ -42,12 +42,6 @@
       padding: 0.5rem;
       border: none;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-      // background-image: linear-gradient(
-      //   to right,
-      //   #53873b 0%,
-      //   #789f48 51%,
-      //   #76c154 100%
-      // );
       background-color: $green;
       cursor: pointer;
     }
@@ -75,14 +69,7 @@
 }
 
 .task-card-past-due {
-  // background: linear-gradient(180deg,rgb(244, 127, 100) 40%,rgb(248, 94, 52) 100%);
-  // background-image: linear-gradient(
-  //   to right,
-  //   #e53935 0%,
-  //   #e35d5b 51%,
-  //   #e53935 100%
-  // );
-  background-color: $red;;
+  background-color: $red;
 
 }
 
@@ -90,18 +77,6 @@
 .task-card-completed {
   margin: auto;
   margin-bottom: $margin-medium;
-  // background-image: linear-gradient(
-  //   to right,
-  //   #56ab2f 0%,
-  //   #a8e063 51%,
-  //   #82c066 100%
-  // );
-  // background-image: linear-gradient(
-  //   to right,
-  //   #25cb80 0%,
-  //   #09e180 51%,
-  //   #1ac477 100%
-  // );
   background-color: $green;
 }
 

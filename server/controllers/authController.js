@@ -1,6 +1,4 @@
 
-////////////// BRETT /////////////////////////////
-
 const User = require('../models/userModel');
 const { hashPassword, comparePassword } = require ('../helpers/auth')
 const jwt = require('jsonwebtoken');
@@ -61,8 +59,8 @@ const loginUser = async (req, res) => {
         if (match) {
             jwt.sign({ name: user.username, id: user._id }, process.env.JWT_SECRET, {}, (err, token) => {
                 if (err) throw err;
-                res.cookie('token', token).json(user) // Set the token as a cookie
-                res.json({ message: 'Password match', token }); // Respond to the client after setting the cookie
+                res.cookie('token', token).json(user) 
+                res.json({ message: 'Password match', token });
             });
         } else {
             res.json({

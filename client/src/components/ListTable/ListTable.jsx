@@ -15,7 +15,7 @@ function ListTable({ search }) {
       const response = await axios.get("/tasks");
       if (response.data.success) {
         const categories = response.data.data.map((item) => item.list);
-        const categoryList = Array.from(new Set(categories.filter(Boolean))); // Filter out undefined/null values
+        const categoryList = Array.from(new Set(categories.filter(Boolean)));
         setListTable(categoryList);
         setFilteredList(categoryList);
       }

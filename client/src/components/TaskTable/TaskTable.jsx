@@ -97,7 +97,7 @@ function TaskTable({ moveTaskToCompleted, search }) {
     setFormDataEdit({
       task: taskData.task,
       list: taskData.list,
-      due: moment(taskData.due, "D/M HH:mm").format("YYYY-MM-DDTHH:mm"), // Adjust date format
+      due: moment(taskData.due, "D/M HH:mm").format("YYYY-MM-DDTHH:mm"),
       _id: taskData._id,
     });
     setEditSection(true);

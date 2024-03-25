@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { useContext } from "react";
-// import { UserContext } from "../../context/userContext";
 import Nav from "../../components/Nav/Nav";
 import TaskTable from "../../components/TaskTable/TaskTable";
 import ListTable from "../../components/ListTable/ListTable";
@@ -11,20 +9,15 @@ function Dashboard() {
   const [view, setView] = useState("tasks");
   const [completedTasks, setCompletedTasks] = useState([]);
   const [search, setSearch] = useState("");
-  // const username = "John Doe"; // Antag att detta är användarnamnet
-  // const {user} = useContext(UserContext);
 
   const moveTaskToCompleted = (task) => {
-    // Add task to completed tasks in state
     setCompletedTasks((prevCompletedTasks) => [...prevCompletedTasks, task]);
   
-    // Save completed tasks to local storage
     const updatedCompletedTasks = [...completedTasks, task];
     localStorage.setItem("completedTasks", JSON.stringify(updatedCompletedTasks));
   };
   
   useEffect(() => {
-    // Fetch completed tasks from local storage when component mounts
     const storedCompletedTasks = localStorage.getItem("completedTasks");
     if (storedCompletedTasks) {
       setCompletedTasks(JSON.parse(storedCompletedTasks));

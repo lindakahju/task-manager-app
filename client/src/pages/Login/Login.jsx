@@ -5,7 +5,7 @@ import "./../Login/login.scss";
 import logo from "./../../assets/logo.svg";
 
 function Login() {
-  const navigate = useNavigate(); // Skapa en navigate-funktion
+  const navigate = useNavigate(); 
   const [data, setData] = useState({
     username: '',
     password: '',
@@ -30,7 +30,6 @@ function Login() {
     } catch (error) {
       
     }
-    // navigate("/");
   };
 
   return (

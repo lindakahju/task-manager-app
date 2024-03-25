@@ -1,4 +1,4 @@
-// completedTaskModel.js
+
 const mongoose = require("mongoose");
 
 const completedTaskSchema = mongoose.Schema(
