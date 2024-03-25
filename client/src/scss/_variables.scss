@@ -1,0 +1,48 @@
+$baseline: 16px;
+$breakpointDesktop: 800px;
+
+$textColor: #292960;
+
+$white: #FDFDFD;
+$blue: #7878e3;
+$green: #13df76;
+$red: #FF4944;
+$lightGray: #ffffff78; 
+
+$gradientPurple: linear-gradient(180deg,rgb(144, 111, 241) 40%,rgb(90, 55, 196) 100%);
+$gradientPurple-dark: linear-gradient(#9d50bb 0%,#7a59af 51%, #b07cc5 100%);
+$gradientOrange: linear-gradient(#f1984e 0%,#f1a94a 51%,#f7a364 100%);
+$gradientGreen:  linear-gradient(#24b875 0%,#00C66C 51%,#13a965 100%);
+$gradientRed: linear-gradient(180deg,rgb(236, 80, 45) 40%,rgb(224, 60, 15) 100%);
+
+
+// $primaryTextColor: #312e2e;
+// $primaryBackgroundColor: #fdfdfd;
+// $darkOrange: #ffcc99;
+// $lightOrange: #ffefdf;
+// $red: #ff8181;
+// $green: #99cc99;
+// $white: #fcfbfb;
+
+// $darkPurple: #6a3bf2;
+// $lightPurple: #9999ff;
+
+$borderRadius-small: calc($baseline * 0.3);
+$borderRadius-medium: calc($baseline * 0.5);
+
+$margin-small: calc($baseline / 2);
+$margin-medium: $baseline;
+$margin-large: calc($baseline * 2);
+
+$gap-small: calc($baseline / 2);
+$gap-medium: calc($baseline / 1.2);
+$gap-large: calc($baseline * 2);
+
+$padding-small: calc($baseline / 2);
+$padding-medium: $baseline;
+$padding-large: calc($baseline * 2);
+
+@mixin gridDesktop {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+}

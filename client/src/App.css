@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  min-height: 100vh;
+  padding-bottom: 5rem;
+  /* background-color: linear-gradient(
+  40deg,
+  hsl(0deg 0% 100%) 0%,
+  hsl(358deg 59% 89%) 31%,
+  hsl(358deg 59% 89%) 49%,
+  hsl(0deg 0% 100%) 100%
+); */
+background-color: #b9a0fe62;
+}

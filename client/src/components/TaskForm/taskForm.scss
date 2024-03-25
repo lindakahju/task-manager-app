@@ -1,0 +1,103 @@
+@import "./../../scss/variables";
+@import "./../../scss/typography";
+
+.form-container {
+  @include fontSmall;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  padding: $padding-medium;
+  margin: $margin-medium;
+  border: 1px solid rgb(75, 9, 133);
+  border-radius: $borderRadius-medium;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  position: fixed;
+}
+
+h2 {
+  margin: 2rem 0;
+}
+
+input {
+  width: 100%;
+  margin-bottom: $margin-medium;
+}
+
+.task-input {
+  padding-bottom: 2rem;
+}
+
+.datetime-input {
+  width: 50%;
+}
+
+.btn-section {
+  padding-top: $padding-large;
+}
+
+.btn-create {
+  @include fontSmall;
+  // background-image: linear-gradient(
+  //   to right,
+  //   #f38735 0%,
+  //   #ed6c3e 51%,
+  //   #f08838 100%
+  // );
+  background: $gradientPurple;
+  color: $white;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 20px;
+  padding: $padding-medium;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.close-btn {
+  @include fontSmall;
+
+  // background-image: linear-gradient(
+  //   to right,
+  //   #f38735 0%,
+  //   #ed6c3e 51%,
+  //   #f08838 100%
+  // );
+  background: linear-gradient(
+    180deg,
+    rgb(144, 111, 241) 40%,
+    rgb(90, 55, 196) 100%
+  );
+  color: $white;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 20px;
+  padding: $padding-small;
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.btn-delete {
+  @include fontSmall;
+  background: $gradientRed;
+  color: $white;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 20px;
+  padding: $padding-medium;
+  cursor: pointer;
+}
+
+.error-message {
+  color: $red;
+}

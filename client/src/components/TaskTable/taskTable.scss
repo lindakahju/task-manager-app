@@ -1,0 +1,40 @@
+@import "./../../scss/variables";
+@import "./../../scss/typography";
+
+.btn-delete {
+  width: 9rem;
+}
+
+.new-task_btn {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 999;
+  background: $gradientPurple;
+  // background-image: linear-gradient(
+  //   to right,
+  //   #f38735 0%,
+  //   #ed6c3e 51%,
+  //   #f08838 100%
+  // );
+  // border: 2px outset rgb(192, 90, 7);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-radius: 20px;
+  padding: 1.2rem;
+  cursor: pointer;
+
+  img {
+    width: 3rem;
+  }
+}
+
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
