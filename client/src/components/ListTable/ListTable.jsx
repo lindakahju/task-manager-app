@@ -7,6 +7,7 @@ axios.defaults.baseURL = "http://localhost:8000/";
 function ListTable({ search }) {
   const [listTable, setListTable] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
+
   const [selectedList, setSelectedList] = useState(null);
   const [listTasks, setListTasks] = useState([]);
 
@@ -67,15 +68,11 @@ function ListTable({ search }) {
   return (
     <section>
       {filteredList.length > 0 ? (
-        <section
-          className={`list-container ${selectedList ? "opened" : ""}`}
-        >
+        <section className={`list-container ${selectedList ? "opened" : ""}`}>
           {filteredList.map((list, index) => (
             <section
               key={index}
-              className={`list-card ${
-                selectedList === list ? "selected" : ""
-              }`}
+              className={`list-card ${selectedList === list ? "selected" : ""}`}
               onClick={() => handleListClick(list)}
             >
               <section className="list-title">{list}</section>
@@ -92,7 +89,7 @@ function ListTable({ search }) {
           ))}
         </section>
       ) : (
-        <p style={{ textAlign: "center" }}>No lists yet</p>
+        <p className="no-tasks">No lists found</p>
       )}
     </section>
   );

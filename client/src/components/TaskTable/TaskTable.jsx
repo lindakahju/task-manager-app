@@ -38,15 +38,19 @@ function TaskTable({ moveTaskToCompleted, search }) {
     if (!formData.task || !formData.list || !formData.due) {
       return setErrorMessage("Please fill in all fields.");
     }
-    const data = await axios.post("/create", formData);
-    if (data.data.success) {
-      setAddSection(false);
-      getFetchData();
-      setFormData({
-        task: "",
-        list: "",
-        due: "",
-      });
+    try {
+      const data = await axios.post("/create", formData);
+      if (data.data.success) {
+        setAddSection(false);
+        getFetchData();
+        setFormData({
+          task: "",
+          list: "",
+          due: "",
+        });
+      }
+    } catch (error) {
+      console.log("Error:", error);
     }
   };
 
@@ -69,9 +73,13 @@ function TaskTable({ moveTaskToCompleted, search }) {
   }, []);
 
   const handleDelete = async (id) => {
-    const data = await axios.delete("/delete/" + id);
-    if (data.data.success) {
-      getFetchData();
+    try {
+      const data = await axios.delete("/delete/" + id);
+      if (data.data.success) {
+        getFetchData();
+      }
+    } catch (error) {
+      console.log("Error:", error);
     }
   };
 
@@ -79,10 +87,14 @@ function TaskTable({ moveTaskToCompleted, search }) {
     e.preventDefault();
     const { _id, ...updatedData } = formDataEdit;
     const url = `/update/${_id}`;
-    const data = await axios.put(url, updatedData);
-    if (data.data.success) {
-      getFetchData();
-      setEditSection(false);
+    try {
+      const data = await axios.put(url, updatedData);
+      if (data.data.success) {
+        getFetchData();
+        setEditSection(false);
+      }
+    } catch (error) {
+      console.log("Error:", error);
     }
   };
 
@@ -93,6 +105,7 @@ function TaskTable({ moveTaskToCompleted, search }) {
       [name]: value,
     }));
   };
+
   const handleEdit = (taskData) => {
     setFormDataEdit({
       task: taskData.task,
@@ -102,13 +115,15 @@ function TaskTable({ moveTaskToCompleted, search }) {
     });
     setEditSection(true);
   };
-  
-  
 
   const handleComplete = async (task) => {
-    const data = await axios.delete("/delete/" + task._id);
-    if (data.data.success) {
-      moveTaskToCompleted(task);
+    try {
+      const data = await axios.delete("/delete/" + task._id);
+      if (data.data.success) {
+        moveTaskToCompleted(task);
+      }
+    } catch (error) {
+      console.log("Error:", error);
     }
   };
 
@@ -122,25 +137,23 @@ function TaskTable({ moveTaskToCompleted, search }) {
     <section>
       <section className="task-card_container">
         {filteredDataList.length > 0 ? (
-          filteredDataList.map((el) => {
-            return (
-              <TaskCard
-                key={el._id}
-                task={el.task}
-                list={el.list}
-                due={el.due}
-                handleEdit={() => handleEdit(el)}
-                handleComplete={() => handleComplete(el)}
-              />
-            );
-          })
+          filteredDataList.map((el) => (
+            <TaskCard
+              key={el._id}
+              task={el.task}
+              list={el.list}
+              due={el.due}
+              handleEdit={() => handleEdit(el)}
+              handleComplete={() => handleComplete(el)}
+            />
+          ))
         ) : (
-          <p style={{ textAlign: "center" }}>No tasks</p>
+          <p className="no-tasks">No tasks found</p>
         )}
       </section>
       {addSection && (
         <>
-          <div className="form-overlay" />
+          <section className="form-overlay" />
           <TaskForm
             handleSubmit={handleSubmit}
             handleOnChange={handleOnChange}
@@ -152,16 +165,15 @@ function TaskTable({ moveTaskToCompleted, search }) {
       )}
       {editSection && (
         <>
-          <div className="form-overlay" />
+          <section className="form-overlay" />
           <TaskForm
-  handleSubmit={handleUpdate}
-  handleOnChange={handleEditOnChange}
-  handleclose={() => setEditSection(false)}
-  rest={{ ...formDataEdit, handleDelete }}
-  errorMessage={errorMessage}
-  isEditing={editSection} 
-/>
-
+            handleSubmit={handleUpdate}
+            handleOnChange={handleEditOnChange}
+            handleclose={() => setEditSection(false)}
+            rest={{ ...formDataEdit, handleDelete }}
+            errorMessage={errorMessage}
+            isEditing={editSection}
+          />
         </>
       )}
       <button className="new-task_btn" onClick={() => setAddSection(true)}>

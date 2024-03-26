@@ -3,20 +3,26 @@ $breakpointDesktop: 800px;
 
 $textColor: #292960;
 
-$white: #FDFDFD;
+$white: #fdfdfd;
 $blue: #7878e3;
 $green: #13df76;
-$red: #FF4944;
-$lightGray: #ffffff78; 
+$red: #ff4944;
+$lightGray: #ffffff78;
 
 $gradientPurple: linear-gradient(180deg,rgb(144, 111, 241) 40%,rgb(90, 55, 196) 100%);
-$gradientPurple-dark: linear-gradient(#9d50bb 0%,#7a59af 51%, #b07cc5 100%);
-$gradientOrange: linear-gradient(#f1984e 0%,#f1a94a 51%,#f7a364 100%);
-$gradientGreen:  linear-gradient(#24b875 0%,#00C66C 51%,#13a965 100%);
-$gradientRed: linear-gradient(180deg,rgb(236, 80, 45) 40%,rgb(224, 60, 15) 100%);
+$gradientPurple-dark: linear-gradient(#9d50bb 0%, #7a59af 51%, #b07cc5 100%);
+$gradientOrange: linear-gradient(#f1984e 0%, #f1a94a 51%, #f7a364 100%);
+$gradientGreen: linear-gradient(#24b875 0%, #00c66c 51%, #13a965 100%);
+$gradientRed: linear-gradient(
+  180deg,
+  rgb(236, 80, 45) 40%,
+  rgb(224, 60, 15) 100%
+);
 
 $borderRadius-small: calc($baseline * 0.3);
 $borderRadius-medium: calc($baseline * 0.5);
+$borderRadius-large: calc($baseline * 0.7);
+$borderRadius-Xlarge: calc($baseline * 1.4);
 
 $margin-small: calc($baseline / 2);
 $margin-medium: $baseline;

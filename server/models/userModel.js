@@ -1,27 +1,22 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema(
+  {
     username: {
-        type: String,
-        unique: true,
-        required: true
+      type: String,
+      unique: true,
+      required: true,
     },
     password: {
-        type: String,
-        required: true
-    }
-}, {timestamps: true});
+      type: String,
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
 
 const User = mongoose.model("User", userSchema);
 module.exports = User;
-
-
-
-
-
-
-
-
 
 // const mongoose = require('mongoose');
 // const bcrypt = require('bcrypt');
@@ -59,7 +54,6 @@ module.exports = User;
 //     return user;
 // };
 
-
 // userSchema.statics.login = async function(username, password) {
 //     if (!username || !password || typeof password !== 'string' || password.trim() === '') {
 //         throw new Error('Both username and password are required');
@@ -81,9 +75,6 @@ module.exports = User;
 // }
 
 // module.exports = mongoose.model('User', userSchema);
-
-
-
 
 // const UserModel = mongoose.model('User', userSchema);
 

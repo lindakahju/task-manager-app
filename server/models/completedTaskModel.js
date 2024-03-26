@@ -1,4 +1,3 @@
-
 const mongoose = require("mongoose");
 
 const completedTaskSchema = mongoose.Schema(
@@ -15,4 +14,3 @@ const completedTaskSchema = mongoose.Schema(
 const CompletedTask = mongoose.model("CompletedTask", completedTaskSchema);
 
 module.exports = CompletedTask;
-

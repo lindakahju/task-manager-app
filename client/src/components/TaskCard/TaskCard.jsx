@@ -6,24 +6,37 @@ import listIcon from "./../../assets/list-black-icon.svg";
 import clockIcon from "./../../assets/clock-icon.svg";
 import "./taskCard.scss";
 
-const TaskCard = ({ task, list, due, handleEdit, handleComplete, isCompleted }) => {
+const TaskCard = ({
+  task,
+  list,
+  due,
+  handleEdit,
+  handleComplete,
+  isCompleted,
+}) => {
   const isDuePassed = moment(due, "D/M HH:mm").isBefore(moment());
 
+  const handleCompleteClick = () => {
+    handleComplete({ task, list, due });
+    window.location.reload();
+  };
+
   return (
-    <section className={`task-card ${isDuePassed ? "task-card-past-due" : ""} ${isCompleted ? "task-card-completed" : ""}`}>
+    <section
+      className={`task-card ${isDuePassed ? "task-card-past-due" : ""} ${
+        isCompleted ? "task-card-completed" : ""
+      }`}
+    >
       <section className="task-card__first-row">
         {task}
         <section className="task-card__first-row buttons">
-          {!isCompleted && ( 
+          {!isCompleted && (
             <button className="btn-edit" onClick={handleEdit}>
               <img src={editIcon} alt="edit icon" />
             </button>
           )}
           {!isCompleted && (
-            <button
-              className="btn-done"
-              onClick={() => handleComplete({ task, list, due })}
-            >
+            <button className="btn-done" onClick={handleCompleteClick}>
               <img src={checkIcon} alt="check icon" />
             </button>
           )}

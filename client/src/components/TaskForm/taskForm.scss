@@ -55,11 +55,7 @@ input {
 
 .close-btn {
   @include fontSmall;
-  background: linear-gradient(
-    180deg,
-    rgb(144, 111, 241) 40%,
-    rgb(90, 55, 196) 100%
-  );
+  background: $gradientPurple;
   color: $white;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -72,6 +68,11 @@ input {
   top: 0;
   right: 0;
   cursor: pointer;
+
+  img {
+    width: 1.4rem;
+    padding-top: 0.2rem;
+  }
 }
 
 .btn-delete {

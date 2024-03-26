@@ -12,11 +12,9 @@ function Dashboard() {
 
   const moveTaskToCompleted = (task) => {
     setCompletedTasks((prevCompletedTasks) => [...prevCompletedTasks, task]);
-  
-    const updatedCompletedTasks = [...completedTasks, task];
-    localStorage.setItem("completedTasks", JSON.stringify(updatedCompletedTasks));
+    localStorage.setItem("completedTasks", JSON.stringify([...completedTasks, task]));
   };
-  
+   
   useEffect(() => {
     const storedCompletedTasks = localStorage.getItem("completedTasks");
     if (storedCompletedTasks) {
@@ -29,16 +27,13 @@ function Dashboard() {
       <Nav search={search} setSearch={setSearch} view={view} setView={setView} />
       <section className="content-container">
         {view === "tasks" && (
-          <TaskTable
-            moveTaskToCompleted={moveTaskToCompleted}
-            search={search}
-          />
+          <TaskTable moveTaskToCompleted={moveTaskToCompleted} search={search} />
         )}
         {view === "categories" && <ListTable search={search} />}
         {view === "completed" && (
           <ul>
-            {completedTasks.map((task, index) => (
-              <li key={index}>
+            {completedTasks.map((task) => (
+              <li key={task._id}>
                 <TaskCard
                   task={task.task}
                   list={task.list}

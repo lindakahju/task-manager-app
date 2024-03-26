@@ -1,7 +1,6 @@
 @import "/src/scss/variables";
 @import "/src/scss/typography";
 
-
 .login {
   @include fontSmall;
   position: absolute;
@@ -9,11 +8,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  
-.logo {
-  margin-bottom: 3rem;
-}
-  
+  .logo {
+    margin-bottom: 3rem;
+  }
 
   &__form {
     display: flex;
@@ -34,11 +31,7 @@
 
   &__btn {
     @include fontSmall;
-    background: linear-gradient(
-      180deg,
-      rgb(144, 111, 241) 40%,
-      rgb(90, 55, 196) 100%
-    );
+    background: $gradientPurple;
     color: $white;
     border-radius: 6px;
     border: none;

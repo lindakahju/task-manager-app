@@ -26,9 +26,9 @@
   gap: 0.5rem;
   background-color: $lightGray;
   padding: 0.5rem;
-  border-radius: 10px;
+  border-radius: $borderRadius-medium;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
-  rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 }
 
 .calendar-icon {
@@ -37,20 +37,19 @@
 
 .separator-line {
   border-left: 1px solid rgba(40, 41, 40, 0.651);
- height: 1.8rem;
- margin: 0 0.5rem;
+  height: 1.8rem;
+  margin: 0 0.5rem;
 }
-
 
 .logout-btn {
   display: flex;
   align-items: center;
   padding: 0.5rem;
   background-color: $lightGray;
-  border-radius: 10px;
+  border-radius: $borderRadius-large;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
-  rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 }
 
 .heading-greeting {
@@ -60,7 +59,6 @@
   color: $textColor;
   margin: $margin-medium 0;
   padding-bottom: $padding-medium;
-
 }
 
 .view-btn-container {
@@ -68,7 +66,7 @@
   width: 80vw;
   color: $textColor;
   padding: $padding-medium;
-  border-radius: 20px;
+  border-radius: $borderRadius-Xlarge;
   display: flex;
   justify-content: space-between;
   margin: auto;
@@ -88,7 +86,6 @@
   font-weight: 800;
 }
 
-
 .view-btn {
   @include fontSmall;
   text-transform: uppercase;
@@ -97,7 +94,6 @@
   cursor: pointer;
   transition: color 0.3s ease;
   margin: 0 1rem 0 1rem;
-  
 }
 
 .view-btn img {
@@ -105,7 +101,7 @@
   width: 3.6rem;
   margin: auto;
   border: none;
-  border-radius: 20px;
+  border-radius: $borderRadius-Xlarge;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   padding: 0.5rem;
@@ -113,7 +109,7 @@
 }
 
 .task-btn img {
-    background-image: $gradientPurple-dark;
+  background-image: $gradientPurple-dark;
 }
 
 .categories-btn img {
@@ -121,5 +117,5 @@
 }
 
 .completed-btn img {
-    background-image: $gradientGreen;
+  background-image: $gradientGreen;
 }

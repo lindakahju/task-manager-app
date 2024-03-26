@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap");
+@import "./variables";
 
 $baseFontSize: 16px;
 
@@ -8,7 +9,7 @@ $baseFontSize: 16px;
   font-size: $baseFontSize * 2;
   line-height: 140%;
   font-weight: 500;
-  color: #212427;
+  color: $textColor;
 }
 
 @mixin fontMedium {
@@ -16,7 +17,7 @@ $baseFontSize: 16px;
   font-size: $baseFontSize * 1.25;
   line-height: 140%;
   font-weight: 400;
-  color: #212427;
+  color: $textColor;
 }
 
 @mixin fontSmall {
@@ -24,5 +25,5 @@ $baseFontSize: 16px;
   font-size: $baseFontSize;
   line-height: 140%;
   font-weight: 400;
-  color: #212427;
+  color: $textColor;
 }

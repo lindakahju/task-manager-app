@@ -1,6 +1,6 @@
-const Task = require('../models/taskModel');
-const CompletedTask = require('../models/completedTaskModel');
-const moment = require('moment-timezone');
+const Task = require("../models/taskModel");
+const CompletedTask = require("../models/completedTaskModel");
+const moment = require("moment-timezone");
 
 moment.tz.setDefault("Europe/Stockholm");
 
@@ -8,7 +8,9 @@ module.exports = {
   completeTask: async (req, res) => {
     const { task, list, due } = req.body;
     if (!task || !list || !due) {
-      return res.status(400).json({ success: false, message: "All fields are required." });
+      return res
+        .status(400)
+        .json({ success: false, message: "All fields are required." });
     }
     try {
       const data = new CompletedTask(req.body);
@@ -79,15 +81,29 @@ module.exports = {
   createTask: async (req, res) => {
     const { task, list, due } = req.body;
     if (!task || !list || !due) {
-      return res.status(400).json({ success: false, message: "All fields are required." });
+      return res
+        .status(400)
+        .json({ success: false, message: "All fields are required." });
     }
     try {
       const data = new Task(req.body);
       await data.save();
-      res.status(201).json({ success: true, message: "Task saved successfully", data: data });
+      res
+        .status(201)
+        .json({
+          success: true,
+          message: "Task saved successfully",
+          data: data,
+        });
     } catch (error) {
       console.error("Failed to save task:", error);
-      res.status(500).json({ success: false, message: "Failed to save task", error: error.message });
+      res
+        .status(500)
+        .json({
+          success: false,
+          message: "Failed to save task",
+          error: error.message,
+        });
     }
   },
 
@@ -130,5 +146,5 @@ module.exports = {
         error: error.message,
       });
     }
-  }
+  },
 };
