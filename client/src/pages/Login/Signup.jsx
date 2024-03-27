@@ -3,6 +3,7 @@ import axios from "axios";
 import "./../Login/login.scss";
 import logo from "./../../assets/logo.svg";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-hot-toast';
 
 function Signup() {
   const navigate = useNavigate();
@@ -15,27 +16,27 @@ function Signup() {
     e.preventDefault();
     const { username, password } = data;
     try {
-      const { data: responseData } = await axios.post("/signup", {
+      const { data } = await axios.post("/signup", {
         username,
         password,
       });
-      if (responseData.error) {
-        console.log(responseData.error);
+      if (data.error) {
+        toast.error(data.error)
       } else {
-        // Reset form fields after successful signup
         setData({ username: "", password: "" });
-        console.log("Success!");
+        toast.success('Account created!')
         navigate("/login");
       }
     } catch (error) {
-      console.error("Error during signup:", error);
-      // Handle error appropriately, such as displaying an error message
+      console.error("Error signing up", error);
     }
   };
 
   return (
     <section className="login">
       <img src={logo} alt="logo" className="logo" />
+      <h1 className="title">Signup</h1>
+
       <form className="login__form" onSubmit={signupUser}>
         <label>
           Username:
@@ -64,7 +65,7 @@ function Signup() {
       <section className="login__signup">
         <p>Already have an account?</p>
         <p>
-          Log in <b className="link">here!</b>
+          Log in <b className="link" onClick={() => navigate("/login")}>here!</b>
         </p>
       </section>
     </section>

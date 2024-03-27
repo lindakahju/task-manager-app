@@ -121,6 +121,7 @@ function TaskTable({ moveTaskToCompleted, search }) {
       const data = await axios.delete("/delete/" + task._id);
       if (data.data.success) {
         moveTaskToCompleted(task);
+        window.location.reload();
       }
     } catch (error) {
       console.log("Error:", error);

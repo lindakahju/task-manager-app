@@ -1,6 +1,6 @@
 import React from "react";
 import "./taskForm.scss";
-import closeIcon from "./../../assets/cross-icon.svg";
+import closeIcon from "./../../assets/close-icon.svg";
 
 const TaskForm = ({
   handleSubmit,

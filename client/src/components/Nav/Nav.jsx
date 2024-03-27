@@ -17,13 +17,13 @@ function Nav({ search, setSearch, view, setView }) {
   let greetingMessage = "";
 
   if (currentHour >= 5 && currentHour < 11) {
-    greetingMessage = "Good morning!";
+    greetingMessage = "Good morning";
   } else if (currentHour >= 11 && currentHour < 15) {
-    greetingMessage = "Good day!";
+    greetingMessage = "Good day";
   } else if (currentHour >= 15 && currentHour < 18) {
-    greetingMessage = "Good afternoon!";
+    greetingMessage = "Good afternoon";
   } else {
-    greetingMessage = "Good evening!";
+    greetingMessage = "Good evening";
   }
 
   const [isSearchOpen, setIsSearchOpen] = useState(false);

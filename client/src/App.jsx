@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { UserContextProvider } from "./context/userContext";
+import { Toaster } from 'react-hot-toast'
 import axios from "axios";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Signup from "./pages/Login/Signup";
@@ -12,6 +13,7 @@ axios.defaults.withCredentials = true;
 function App() {
   return (
     <UserContextProvider>
+      <Toaster position="bottom" toastOptions={{duration: 3000}}></Toaster>
       <main className="app">
         <BrowserRouter>
           <Routes>

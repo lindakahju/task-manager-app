@@ -1,5 +1,4 @@
 $baseline: 16px;
-$breakpointDesktop: 800px;
 
 $textColor: #292960;
 
@@ -28,15 +27,6 @@ $margin-small: calc($baseline / 2);
 $margin-medium: $baseline;
 $margin-large: calc($baseline * 2);
 
-$gap-small: calc($baseline / 2);
-$gap-medium: calc($baseline / 1.2);
-$gap-large: calc($baseline * 2);
-
 $padding-small: calc($baseline / 2);
 $padding-medium: $baseline;
 $padding-large: calc($baseline * 2);
-
-@mixin gridDesktop {
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
-}

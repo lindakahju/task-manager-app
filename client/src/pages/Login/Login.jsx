@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {toast} from "react-hot-toast";
 import axios from "axios";
 import "./../Login/login.scss";
 import logo from "./../../assets/logo.svg";
@@ -20,7 +21,7 @@ function Login() {
         password,
       });
       if (data.error) {
-        console.log("login did not work");
+        toast.error('Incorrect password')
       } else {
         setData({});
         navigate("/");
@@ -31,6 +32,7 @@ function Login() {
   return (
     <section className="login">
       <img src={logo} alt="logo" className="logo" />
+      <h1 className="title">Login</h1>
       <form className="login__form" onSubmit={loginUser}>
         <label>
           Username:
@@ -59,7 +61,7 @@ function Login() {
       <section className="login__signup">
         <p>No account yet?</p>
         <p className="login__link">
-          Sign up <b className="link">here!</b>
+          Sign up <b className="link" onClick={() => navigate("/signup")}>here!</b>
         </p>
       </section>
     </section>
